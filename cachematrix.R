@@ -1,12 +1,17 @@
-## The script hold two functions , the first returns a list of functions,
+## The script holds two functions , the first returns a list of functions,
 ## a  getdata which returns the matrix passed, get inverse that returns inverse set
 ## and set inverse used to set inverse variable at the first run.
-## The second function checks for the inverse , if it is null computes stores and 
+## The second function checks for the inverse , if it is null, it computes stores and 
 ##displays inverse, else reads from cache and displays the same.
-
+## the setmat function is to be used to set new values to the matrixa
 
 makeCacheMatrix <- function(x = matrix()) {
 inverse<-NULL
+setmat<-function(y=matrix())
+{
+  x<<-y
+  inverse<<-NULL
+}
 getdata <- function()
 {return(x)}
 getinverse <- function() {inverse}
@@ -15,7 +20,7 @@ setinverse <- function(i)
   inverse<<-i
   print("inverse has been stored")
 }
-list(getdata=getdata,getinverse=getinverse,setinverse=setinverse)
+list(setmat=setmat,getdata=getdata,getinverse=getinverse,setinverse=setinverse)
 
 }
 
